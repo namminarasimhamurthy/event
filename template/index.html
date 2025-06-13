@@ -1,0 +1,68 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Event Management System</title>
+    <link rel="stylesheet" href="{% static 'styles.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Evento</div>
+            <input type="text" placeholder="Search..." class="search-bar">
+            <nav>
+                <a href="{% url 'about' %}">About Us</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'login' %}">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="register-card">
+            <h2>Register</h2>
+            <form method="POST" action="{% url 'registerup' %}">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Name" required>
+                <input type="email" name="email" placeholder="Email" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit">Register Account</button>
+            </form>
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h4>Get in Touch</h4>
+                <p>9346800608, Event St, EventManagement</p>
+                <p>narasimhamurthynammi712@gmail.com</p>
+            </div>
+            <div>
+                <h4>Follow Us On</h4>
+                <div class="social-icons">
+                    <a href="#">T</a>
+                    <a href="#">F</a>
+                    <a href="#">L</a>
+                    <a href="#">I</a>
+                    <a href="#">Y</a>
+                </div>
+            </div>
+            <div>
+                <h4>Website Info</h4>
+                <a href="#">About Us</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <h4>Events Gallery</h4>
+                <a href="#">Wedding</a><br>
+                <a href="#">Parties</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

@@ -1,0 +1,114 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Event Categories</title>
+  {% load static %}
+  <link rel="stylesheet" href="{% static 'homestyle.css' %}">
+</head>
+<body>
+  <header>
+    <div class="navbar">
+      <div class="logo">Event Management</div>
+      <nav>
+        <ul>
+          <li><a href="#weddings">Weddings</a></li>
+          <li><a href="#parties">Parties</a></li>
+          <li><a href="#traditional-functions">Traditional Functions</a></li>
+          <li>
+            <!-- Sign Out Button -->
+            <button type="button" class="signout-btn" onclick="window.location.href='{% url 'signout' %}'">Sign Out</button>
+
+          </li>
+        </ul>
+      </nav>
+    </div>
+  </header>
+
+  <section id="weddings" class="category-section">
+    <h2>Wedding Events</h2>
+    <div class="category-cards">
+      <div class="card">
+        <img src="{% static 'wedding.jpg' %}" alt="Wedding">
+        <h3>Wedding</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{% static 'engagement.jpg' %}" alt="Engagement">
+        <h3>Engagement</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{% static 'reception.jpg' %}" alt="Reception">
+        <h3>Reception</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="parties" class="category-section">
+    <h2>Party Events</h2>
+    <div class="category-cards">
+      <div class="card">
+        <img src="{% static 'birthday.jpg' %}" alt="Birthday Party">
+        <h3>Birthday Party</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{% static 'private.jpg' %}" alt="Private Party">
+        <h3>Private Party</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{% static 'bachelor.jpg' %}" alt="Bachelor Party">
+        <h3>Bachelor Party</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <section id="traditional-functions" class="category-section">
+    <h2>Traditional Functions</h2>
+    <div class="category-cards">
+      <div class="card">
+        <img src="{% static 'halfsaree1.jpg' %}" alt="Half Saree Function">
+        <h3>Half Saree</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{% static 'dhothi1.jpg' %}" alt="Dhothi Function">
+        <h3>Dhothi</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+      <div class="card">
+        <img src="{% static 'shasthi.jpg' %}" alt="Shasthi Purthi">
+        <h3>Shasthi Purthi</h3>
+        <a href="{% url 'booking' %}">
+          <button>Book Now</button>
+        </a>
+      </div>
+    </div>
+  </section>
+
+  <footer>
+    <p>&copy; 2025 Event Management System. All rights reserved.</p>
+  </footer>
+</body>
+</html>

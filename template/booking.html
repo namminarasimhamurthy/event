@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Event Booking</title>
+    {% load static %}
+    <link rel="stylesheet" href="{% static 'booking.css' %}">
+</head>
+<body>
+    <div class="form-container">
+        <h2>Event Booking</h2>
+
+        <!-- Form starts here -->
+        <form action="{% url 'bookingup' %}" method="post">
+            {% csrf_token %}
+
+            <label for="full_name">Enter Full Name</label>
+            <input type="text" id="full_name" name="full_name" required>
+
+            <label for="email">Enter Email</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="event_name">Event Name</label>
+            <input type="text" id="event_name" name="event_name" required>
+
+            <label for="mobile_number">Enter Mobile Number</label>
+            <input type="tel" id="mobile_number" name="mobile_number" required>
+
+            <label for="event_date">Enter Event Date</label>
+            <input type="date" id="event_date" name="event_date" required>
+
+            <label for="amount">Enter Amount You Can Afford</label>
+            <input type="number" id="amount" name="amount" required>
+
+            <label for="description">Enter Description About Event</label>
+            <textarea id="description" name="description" rows="4"></textarea>
+
+            <!-- Correct submit button -->
+            <button type="submit" class="book-event-button">Book Event</button>
+        </form>
+    </div>
+</body>
+</html>

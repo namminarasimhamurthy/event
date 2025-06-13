@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Register - Event Management System</title>
+    <link rel="stylesheet" href="{% static 'register.css' %}">
+</head>
+<body>
+    <header>
+        <div class="navbar">
+            <div class="logo">Evento</div>
+            <input type="text" placeholder="Search..." class="search-bar">
+            <nav>
+                <a href="{% url 'about' %}">About Us</a>
+                <a href="{% url 'register' %}">Register</a>
+                <a href="{% url 'login' %}">Login</a>
+            </nav>
+        </div>
+    </header>
+
+    <main>
+        <div class="form-card">
+            <h2>Create an Account</h2>
+
+            {% if error %}
+                <p style="color:red;">{{ error }}</p>
+            {% endif %}
+
+            <form method="POST" action="{% url 'registerup' %}">
+                {% csrf_token %}
+                <input type="text" name="name" placeholder="Full Name" required>
+                <input type="email" name="email" placeholder="Email Address" required>
+                <input type="password" name="password" placeholder="Password" required>
+                <input type="password" name="confirm_password" placeholder="Confirm Password" required>
+                <button type="submit">Register</button>
+            </form>
+
+            <p>Already have an account? <a href="{% url 'login' %}">Login</a></p>
+        </div>
+    </main>
+
+    <footer>
+        <div class="footer-section">
+            <div>
+                <h4>Contact</h4>
+                <p>9346800608,Event Street</p>
+                <p>narasimhamurthynammi712@gmail.com</p>
+            </div>
+            <div>
+                <h4>Follow Us</h4>
+                <div class="social-icons">
+                    <a href="#">T</a>
+                    <a href="#">F</a>
+                    <a href="#">L</a>
+                    <a href="#">I</a>
+                </div>
+            </div>
+            <div>
+                <h4>Quick Links</h4>
+                <a href="{% url 'about' %}">About Us</a><br>
+                <a href="#">Privacy Policy</a>
+            </div>
+            <div>
+                <h4>Gallery</h4>
+                <a href="#">Weddings</a><br>
+                <a href="#">Parties</a>
+            </div>
+        </div>
+    </footer>
+</body>
+</html>

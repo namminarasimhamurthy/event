@@ -1,0 +1,60 @@
+{% load static %}
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>About Us | Evento - Event Management System</title>
+
+    <!-- Link to CSS using Django static -->
+    <link rel="stylesheet" href="{% static 'about.css' %}">
+</head>
+<body>
+
+<header>
+    <div class="container">
+        <h1>Evento</h1>
+        <p>Your Ultimate Event Management Partner</p>
+    </div>
+</header>
+
+<main>
+    <section class="about">
+        <div class="container">
+            <h2>About Us</h2>
+            <p>
+                <strong>Evento</strong> is a next-generation Event Management System designed to simplify and optimize the process of planning, organizing, and managing events. 
+                From small gatherings to large-scale conferences, Evento empowers organizers with intuitive tools and seamless technology.
+            </p>
+
+            <h2>Our Mission</h2>
+            <p>
+                Our mission is to revolutionize event management through smart digital solutions. We aim to save time, reduce complexity, and enhance the overall event experience for both organizers and attendees.
+            </p>
+
+            <h2>What We Offer</h2>
+            <ul>
+                <li>Secure User Registration and Login</li>
+                <li>Efficient Event Creation and Management</li>
+                <li>Real-Time Tracking of Attendee Registrations</li>
+                <li>Responsive and User-Friendly Interfaces</li>
+                <li>Scalable Architecture for Growing Needs</li>
+            </ul>
+
+            <h2>Technologies Behind Evento</h2>
+            <p>
+                Evento is built using modern technologies like Django (Python), HTML5, CSS3, JavaScript, and robust database systems like SQLite and PostgreSQL for powerful, scalable performance.
+            </p>
+        </div>
+    </section>
+</main>
+
+<footer>
+    <div class="container">
+        &copy; 2025 Evento | Event Management System. All rights reserved.
+    </div>
+</footer>
+
+</body>
+</html>
